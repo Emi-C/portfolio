@@ -1,0 +1,15 @@
+{
+  "transport": "ftp",
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "lhcp1081.webapps.net",
+  "target": "/public_html",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "yh22kfvy",
+  "password": "2-?w3e{d87k$",
+  "watch": []
+}
