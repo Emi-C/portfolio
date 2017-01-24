@@ -51,13 +51,22 @@ animaBG();
 $(document).ready(function() {
 
     setTimeout(function() {
-        $(".name").css("opacity", 1);
+        //$(".name").css("opacity", 1);
+        $(".logo").css("opacity", 1);
     }, 1000);
+
+    setTimeout(function() {
+        //$(".name").css("opacity", 1);
+        $(".landingtit").css("opacity", 1);
+    }, 1500);
 
     setTimeout(function() {
         $(".bio").css("opacity", 1);
     }, 2000);
 
+    setTimeout(function() {
+        $(".scroller").css("opacity", 1);
+    }, 3000);
 });
 
 /*nome-bio*/

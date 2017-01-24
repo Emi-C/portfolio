@@ -7,7 +7,8 @@
   "target": "/public_html",
   "ignore": [
     ".remote-sync.json",
-    ".git/**"
+    ".git/**",
+    "img/**"
   ],
   "username": "yh22kfvy",
   "password": "2-?w3e{d87k$",
