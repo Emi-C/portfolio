@@ -328,7 +328,7 @@ $("#sub:not(.done)").click(function() {
             }
         })
         .done(function() {
-            $("#sub").addClass("done");
+            $("#sub").attr("disabled","disabled");
             $("#sub").html("MESSAGE SENT!");
         })
 
