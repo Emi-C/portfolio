@@ -1,3 +1,6 @@
+html{
+  font-size: 17px;
+}
 html, body {
     height: 100%;
     margin: 0;
@@ -7,7 +10,6 @@ body {
     font-family: 'Montserrat', Calibri, sans-serif;
     background: #fafafa;
     color: #3c3c3c;
-    font-size: 17px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, li {
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 a {
@@ -78,7 +80,7 @@ hr.tall {
     padding: 10px 30px;
     color: #fdfdfd;
     background: #F69432;
-    font-size: 1em;
+    font-size: 1rem;
     border-radius: 0;
     border: 0;
     transition: all .2s;
@@ -103,7 +105,7 @@ hr.tall {
 }
 
 .btn.lg {
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .view {
@@ -138,7 +140,7 @@ hr.tall {
 }
 
 /*.name {
-    font-size: 6em;
+    font-size: 6rem;
     color: #fafafa;
     position: absolute;
     top: 50px;
@@ -160,7 +162,7 @@ hr.tall {
 }
 
 .landingtit{
-  font-size:3em;
+  font-size:3rem;
   color: #2C537A;
   position: absolute;
   bottom: 160px;
@@ -172,7 +174,7 @@ hr.tall {
 }
 
 .bio {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     color: #2C537A;
     position: absolute;
     bottom: 30px;
@@ -351,7 +353,7 @@ hr.tall {
 }
 
 .counter {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: #fafafa;
     position: absolute;
     left: -20px;
@@ -365,13 +367,13 @@ hr.tall {
 
 #count {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     border-bottom: 1px solid #fafafa;
 }
 
-.tit {
-    font-size: 3em;
-    height: 2em;
+.tit h2{
+    font-size: 3rem;
+    height: 5rem;
     color: #fafafa;
     text-shadow: 0px 3px 3px #010101;
     position: absolute;
@@ -404,7 +406,7 @@ hr.tall {
 }
 
 .txt {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: #fafafa;
     text-shadow: 0px 1px 1px #010101;
     position: absolute;
@@ -424,6 +426,7 @@ hr.tall {
 .txthelper>p {
     position: absolute;
     top: 0;
+    font-size:1.7rem;
     transform: translate(-1000px, 0px);
     transition: transform 1.7s ease-in-out;
 }
@@ -434,19 +437,23 @@ hr.tall {
 
 .specs {
     position: absolute;
-    bottom: 0;
-    font-size: .8em;
+    top: 80%;
+    font-size: .8rem;
 }
 
 .specs p {
-    height: 0;
-    transform: translate(-1000px, 0px);
-    transition: transform 1.7s ease-in-out;
+    position:absolute;
+    opacity:0;
+    /*transform: translate(-1000px, 0px);
+    transition: transform 1.7s ease-in-out, opacity 2s;*/
+    transition: opacity 1s, height 0s 1s;
 }
 
 .specs p.active {
-    height: auto;
-    transform: translate(0px, 0px);
+    height:100%;
+    opacity:1;
+    transition: opacity 1s 1s;
+    /*transform: translate(0px, 0px);*/
 }
 
 .specs span {
@@ -456,6 +463,7 @@ hr.tall {
     border-radius: 3px;
     margin-right: 20px;
     box-shadow: 0px 3px 3px #010101;
+    white-space:nowrap;
 }
 
 .picslot {
@@ -490,7 +498,7 @@ hr.tall {
 }
 
 .link {
-    font-size: 2em;
+    font-size: 2rem;
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -643,19 +651,19 @@ hr.tall {
 
 .titfoot {
     color: #D9D3B9;
-    font-size: 3em;
+    font-size: 3rem;
 }
 
 .column>h4 {
     color: #82A3A5;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .column>h4>span {
     color: #fafafa;
-    font-size: .7em;
+    font-size: .7rem;
     font-weight: normal;
 }
 
@@ -688,7 +696,7 @@ hr.tall {
 
     border: 3px solid #2C537A;
 
-    font-size: 2em;
+    font-size: 2rem;
 
     text-transform: uppercase;
 
@@ -754,7 +762,7 @@ hr.tall {
     top: 50px;
     display: inline-block;
     color: #fafafa;
-    font-size: 4em;
+    font-size: 4rem;
 		text-shadow: 0px 3px 3px #010101;
 }
 
@@ -788,7 +796,7 @@ input.txtinput {
     color: #fafafa;
     text-overflow: ellipsis;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     border-radius: 0;
     text-align: center;
 }
@@ -802,7 +810,7 @@ textarea.txtinput {
     background-color: transparent;
     color: #fafafa;
     text-overflow: ellipsis;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     border-radius: 0;
     text-align: center;
 }
@@ -819,7 +827,7 @@ input:focus, textarea:focus {
 
 .flatbtnform {
     display: inline-block;
-    font-size: 1.3em;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-top: 30px;
     padding: 15px 30px;
@@ -846,7 +854,7 @@ input:focus, textarea:focus {
 .flatbtnform.small {
     padding: 8px 50px;
     margin: 10px;
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 .progform {
@@ -892,7 +900,7 @@ input:focus, textarea:focus {
 /*responsive*/
 
 @media screen and (max-width:1399px) {
-    body {
+    html {
         font-size: 12px;
     }
     .main {
@@ -916,7 +924,7 @@ input:focus, textarea:focus {
 }
 
 @media screen and (max-width:1199px) {
-    body {
+    html {
         font-size: 10px;
     }
 }
@@ -928,6 +936,12 @@ input:focus, textarea:focus {
     .framelat.r {
         height: 91%;
     }
+    .pichelper{
+      margin-left: 0px;
+    }
+    .specs span{
+      margin-right:5px;
+    }
 }
 
 @media screen and (max-width:992px) {
@@ -935,45 +949,93 @@ input:focus, textarea:focus {
       top:120px;
     }
 }
-/*responsive*/
 
-
-/*mobile*/
-.mobile{
-	display:none;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	background: linear-gradient(#011121, #00050a 40%);
-	z-index: 99;
-	color: #fafafa;
-}
 @media screen and (max-width:767px) {
-	.mobile{display:block;}
-	.view>*:not(.mobile){
-		display:none;
-	}
+  .contactbtn{
+    top:10px;
+    right:10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo{
+    top:20px;
+    width: 70px;
+  }
+  .landingtit{
+    bottom: 120px;
+    width:80%;
+  }
+  .bio{
+    bottom: 10px;
+    width:80%;
+  }
+
+  .main{
+    padding:20px;
+  }
+  .frame.t{
+    width:80%;
+  }
+  .framelat.r{
+    height:90%;
+  }
+  .counter{
+    left:-12px;
+  }
+  .prjcts{
+    transform:rotate(270deg) translateY(-23px) translateX(40px)
+  }
+
+  .tithelper>h2{
+    top:10px;
+  }
+  .txthelper>p {
+      font-size:1.1rem;
+  }
+  .txt{
+    left:5px;
+    top:20%;
+    width:45%;
+  }
+  .specs {
+      top: 70%;
+  }
+  .specs span{
+    display:block;
+    margin-bottom:5px;
+  }
+  .picslot{
+    right: 5px;
+    width: 45%;
+  }
+  .link{
+    font-size:1.7rem;
+  }
+  .link a{
+    width: 150px;
+  }
+
+  .column{
+    top:2%;
+  }
+  .colone{
+    width:45%;
+    left:1%;
+  }
+  .coltwo{
+    width: 45%;
+    right: 1%;
+  }
+  .titfoot{
+    font-size:2rem;
+  }
+  .column>h4{
+    font-size:1.7rem;
+  }
+  .column>p{
+    font-size:.8rem;
+  }
 }
 
-.mobtit {
-    top: 10px;
-    display: inline-block;
-    color: #fafafa;
-    font-size: 4em;
-}
-
-.topmobview {
-    position: relative;
-    text-align: center;
-    padding: 10px;
-}
-
-.topmobview h4 {
-    color: #82A3A5;
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 10px;
-		margin-top:0;
-}
-/*mobile*/
+/*responsive*/

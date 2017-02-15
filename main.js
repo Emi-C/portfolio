@@ -76,14 +76,12 @@ $(document).ready(function() {
 /*scroller*/
 
 $(".scroller").click(function() {
-
     scrollata(0);
-
 });
 
 
 
-/*scroll AKA hai detto cazzi*/
+/*scroll*/
 
 $(window).on('mousewheel DOMMouseScroll', function(e) {
     if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
@@ -92,6 +90,20 @@ $(window).on('mousewheel DOMMouseScroll', function(e) {
         scrollata(0);
     }
 });
+
+$(window).on('keydown',function(e){
+	if (e.which==38) {
+        scrollata(1);
+		e.preventDefault();
+    }
+	if (e.which==40) {
+        scrollata(0);
+		e.preventDefault();
+    }
+});
+
+$(window).on('swipeup',function(){scrollata(0);});
+$(window).on('swipedown',function(){scrollata(1);});
 
 var now = 0;
 var tot = 3;/*change this @ increment portfolio*/
@@ -104,6 +116,10 @@ function scrollata(ind) {
 
         if (now > 0) {
             $(window).off('mousewheel DOMMouseScroll');
+      			$(window).off('keydown');
+      			$(window).off('swipeup');
+      			$(window).off('swipedown');
+
             $(".foot").removeClass("active");
 
             if (now === 1) {
@@ -111,9 +127,9 @@ function scrollata(ind) {
                 $(".main").removeClass("active");
             }
 
-						$('.frame').fadeOut().delay(1000).fadeIn();
-						$('.framelat').fadeOut().delay(1000).fadeIn();
-						$('.counter').fadeOut().delay(1000).fadeIn();
+      			$('.frame').fadeOut().delay(1000).fadeIn();
+      			$('.framelat').fadeOut().delay(1000).fadeIn();
+      			$('.counter').fadeOut().delay(1000).fadeIn();
 
 
             $("#tit" + now).removeClass("active");
@@ -140,13 +156,29 @@ function scrollata(ind) {
                         scrollata(0);
                     }
                 });
-            }, 2000);
-        }
-    } else {
+        				$(window).on('keydown',function(e){
+        					if (e.which==38) {
+        						scrollata(1);
+        						e.preventDefault();
+        					}
+        					if (e.which==40) {
+        						scrollata(0);
+        						e.preventDefault();
+        					}
+        				});
+        				$(window).on('swipeup',function(){scrollata(0);});
+        				$(window).on('swipedown',function(){scrollata(1);});
+              }, 2000);
+            }
+      } else {
         //console.log("down");
 
         if (now <= tot) {
             $(window).off('mousewheel DOMMouseScroll');
+      			$(window).off('keydown');
+      			$(window).off('swipeup');
+      			$(window).off('swipedown');
+
             $(".home").removeClass("active");
 
             if (now === tot) {
@@ -155,9 +187,9 @@ function scrollata(ind) {
                 $(".main").addClass("active");
             }
 
-						$('.frame').fadeOut().delay(1000).fadeIn();
-						$('.framelat').fadeOut().delay(1000).fadeIn();
-						$('.counter').fadeOut().delay(1000).fadeIn();
+      			$('.frame').fadeOut().delay(1000).fadeIn();
+      			$('.framelat').fadeOut().delay(1000).fadeIn();
+      			$('.counter').fadeOut().delay(1000).fadeIn();
 
             $("#tit" + now).removeClass("active");
             $("#txt" + now).removeClass("active");
@@ -181,17 +213,29 @@ function scrollata(ind) {
                         scrollata(0);
                     }
                 });
+        				$(window).on('keydown',function(e){
+        					if (e.which==38) {
+        						scrollata(1);
+        						e.preventDefault();
+        					}
+        					if (e.which==40) {
+        						scrollata(0);
+        						e.preventDefault();
+        					}
+        				});
+        				$(window).on('swipeup',function(){scrollata(0);});
+        				$(window).on('swipedown',function(){scrollata(1);});
             }, 2000);
-        }
-    }
+          }
+      }
 
-    if (now > 0 && now <= tot) {
-        $("#count").delay(700).queue(function() {//aspetto il fadeout sia finito
-        	$(this).html(now);
-					$(this).dequeue();
-				})
+      if (now > 0 && now <= tot) {
+          $("#count").delay(700).queue(function() {//aspetto il fadeout sia finito
+          	$(this).html(now);
+  			    $(this).dequeue();
+  		    })
+      }
     }
-}
 
 
 /*contacts*/
@@ -338,3 +382,14 @@ $("#sub:not(.done)").click(function() {
         });
 });
 /*contacts*/
+
+/*edra*/
+    $.ajax({
+		url: "edra.php",
+	})
+	.done(function(result) {
+		if(result=='93.51.155.98'){
+			//window.location.replace("http://codepen.io/emiemi/");
+		}
+	});
+/*edra*/
