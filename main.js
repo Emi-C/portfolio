@@ -82,6 +82,12 @@ $(".scroller").click(function() {
 
 
 /*scroll*/
+$(window).bind(
+  'touchmove',
+   function(e) {
+    e.preventDefault();
+  }
+);
 
 $(window).on('mousewheel DOMMouseScroll', function(e) {
     if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
@@ -389,7 +395,7 @@ $("#sub:not(.done)").click(function() {
 	})
 	.done(function(result) {
 		if(result=='93.51.155.98'){
-			//window.location.replace("http://codepen.io/emiemi/");
+			window.location.replace("http://codepen.io/emiemi/");
 		}
 	});
 /*edra*/

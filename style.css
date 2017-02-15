@@ -238,7 +238,7 @@ hr.tall {
     height: 85px;
     position: absolute;
     left: 50%;
-    bottom: 20px;
+    bottom: 50px;
     z-index: 99;
     transform: translateX(-50%);
     cursor: pointer;
@@ -846,8 +846,9 @@ input:focus, textarea:focus {
 }
 
 #sub {
-    padding: 15px 40px;
+    padding: 15px 30px;
     color: #2C537A;
+    font-family: Montserrat;
     cursor: pointer;
 }
 
@@ -893,6 +894,9 @@ input:focus, textarea:focus {
     display: inline-block;
 }
 
+.imgfoot{
+  width: 100%;
+}
 
 /*contact*/
 
@@ -942,12 +946,23 @@ input:focus, textarea:focus {
     .specs span{
       margin-right:5px;
     }
+    .prjcts {
+        transform: rotate(270deg) translateY(-20px) translateX(40px);
+    }
 }
 
 @media screen and (max-width:992px) {
     .logo{
       top:120px;
     }
+    .scroller{
+    bottom:75px;
+    }
+
+    .tithelper>h2{
+      top:20px;
+    }
+
 }
 
 @media screen and (max-width:767px) {
@@ -959,7 +974,7 @@ input:focus, textarea:focus {
   }
 
   .logo{
-    top:20px;
+    top:15px;
     width: 70px;
   }
   .landingtit{
@@ -995,11 +1010,12 @@ input:focus, textarea:focus {
   }
   .txt{
     left:5px;
-    top:20%;
+    top:10%;
     width:45%;
   }
   .specs {
-      top: 70%;
+      top: 60%;
+      text-align:center;
   }
   .specs span{
     display:block;
@@ -1008,9 +1024,12 @@ input:focus, textarea:focus {
   .picslot{
     right: 5px;
     width: 45%;
+    top:15%;
+    bottom:30%;
   }
   .link{
     font-size:1.7rem;
+    bottom:60px;
   }
   .link a{
     width: 150px;
@@ -1031,10 +1050,36 @@ input:focus, textarea:focus {
     font-size:2rem;
   }
   .column>h4{
-    font-size:1.7rem;
+    font-size:1.6rem;
+    margin-bottom: 5px;
+    margin-top: 10px;
   }
   .column>p{
     font-size:.8rem;
+  }
+
+  .formview{
+    padding:20px;
+  }
+  input[type='text'],  textarea { /*prevent zoom mobile contacts*/
+    font-size: 16px;
+  }
+  input.txtinput{
+    margin:20px 0;
+  }
+  textarea.txtinput{
+    margin:5px 0;
+  }
+  .flatbtnform,#sub{
+    padding:10px 20px;
+  }
+  .socialfoot{
+    bottom: 15px;
+    left: 20%;
+  }
+  .socialfoot .colfoot{
+    width: 15%;
+    margin-right:10%;
   }
 }
 
