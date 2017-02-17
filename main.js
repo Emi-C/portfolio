@@ -244,8 +244,8 @@ function scrollata(ind) {
     }
 
 
-/*contacts*/
-var trg = 0;
+/*old contacts*/
+/*var trg = 0;
 var picind = 0;
 var els = $(".piccontact");
 var gocont = setInterval(piccont, 1500);
@@ -285,7 +285,35 @@ $('.tgcontact').click(function() {
         });
         gocont = setInterval(piccont, 1500);
     }
-})
+})*/
+
+
+/*contacts*/
+$('.tgcontact').click(function(){
+  if (!$('.contacts').hasClass('active')) {
+      //attiva contatti
+      $('.contacts').addClass('active');
+      $('.formview>*').delay(1000).animate({
+          opacity: 1
+      });
+      $('.piccontact').fadeOut(300, function() {
+          $('.tgclose').fadeIn(300);
+      });
+    }else{
+      $('.formview>*').animate({
+          opacity: 0
+      });
+      $('.contacts').delay(500).queue(function(next) {
+          $(this).removeClass("active");
+          next();
+      });
+      $('.tgclose').fadeOut(300, function() {
+          $('.piccontact').fadeIn(300);
+      });
+    }
+});
+/*contacts*/
+
 
 //form
 function validateEmail(email) {
@@ -388,6 +416,29 @@ $("#sub:not(.done)").click(function() {
         });
 });
 /*contacts*/
+
+//alert mobile horizontal
+var flagmobile=0;
+ $(document).ready(function() {
+	flagmobile=isLandscape(flagmobile);
+});
+$(window).resize(function() {
+	flagmobile=isLandscape(flagmobile);
+});
+function isLandscape(e) {
+	var vwi=$(window).width();
+	var vhe=$(window).height();
+
+	if(vwi<800&&vwi>vhe){
+    $('.view').css('opacity',"0");
+		$('.hdisclaimer').css("display","block");
+		return 1;
+	}
+  $('.view').css('opacity',"1");
+  $('.hdisclaimer').css("display","none");
+	return 0;
+}
+
 
 /*edra*/
     $.ajax({

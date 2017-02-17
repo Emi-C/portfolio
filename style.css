@@ -671,38 +671,6 @@ hr.tall {
     margin: 0;
 }
 
-
-/*.bottom{
-
-	position:absolute;
-
-	bottom:10%;
-
-	left:50%;
-
-	transform: translateX(-50%);
-
-}
-
-.contactme{
-
-	background: #fafafa;
-
-    color: #2C537A;
-
-    padding: 10px 20px;
-
-    border-radius: 5px;
-
-    border: 3px solid #2C537A;
-
-    font-size: 2rem;
-
-    text-transform: uppercase;
-
-}*/
-
-
 /*FOOT*/
 
 
@@ -1084,3 +1052,37 @@ input:focus, textarea:focus {
 }
 
 /*responsive*/
+
+.hdisclaimer{
+  position:fixed;
+  padding:20px;
+  display:none;
+  background: linear-gradient(144deg, #011121, #2c537a, #82a3a5);
+  background-size: 600% 600%;
+  -webkit-animation: bgDisc 12s ease infinite;
+  -moz-animation: bgDisc 12s ease infinite;
+  animation: bgDisc 12s ease infinite;
+  color:#fafafa;
+  text-align:center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+@-webkit-keyframes bgDisc {
+    0%{background-position:9% 0%}
+    50%{background-position:92% 100%}
+    100%{background-position:9% 0%}
+}
+@-moz-keyframes bgDisc {
+    0%{background-position:9% 0%}
+    50%{background-position:92% 100%}
+    100%{background-position:9% 0%}
+}
+@keyframes bgDisc {
+    0%{background-position:9% 0%}
+    50%{background-position:92% 100%}
+    100%{background-position:9% 0%}
+}
