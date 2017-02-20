@@ -199,43 +199,43 @@ hr.tall {
 }
 
 .lay1 {
-    background: url('http://s30.postimg.org/x24a21701/lay5.png');
+    background: url('img/lay5.png');
     background-repeat: repeat-x;
     top: 0;
     z-index: 2;
 }
 
 .lay2 {
-    background: url('http://s30.postimg.org/t0ilimpbl/lay4.png');
+    background: url('img/lay4.png');
     background-repeat: repeat-x;
     top: 15%;
     z-index: 4;
 }
 
 .lay3 {
-    background: url('http://s30.postimg.org/bd5dy64s1/lay3.png');
+    background: url('img/lay3.png');
     background-repeat: repeat-x;
     top: 30%;
     z-index: 6;
 }
 
 .lay4 {
-    background: url('http://s30.postimg.org/qx86aypip/lay2.png');
+    background: url('img/lay2.png');
     background-repeat: repeat-x;
     top: 45%;
     z-index: 8;
 }
 
 .lay5 {
-    background: url('http://s30.postimg.org/i4vt10trl/lay1.png');
+    background: url('img/lay1.png');
     background-repeat: repeat-x;
     top: 60%;
     z-index: 10;
 }
 
 .scroller {
-    width: 46px;
-    height: 85px;
+    width: 36px;
+    height: 60px;
     position: absolute;
     left: 50%;
     bottom: 50px;
@@ -251,7 +251,7 @@ hr.tall {
     box-sizing: border-box;
     height: 100%;
     border: 2px solid;
-    border-radius: 23px;
+    border-radius: 18px;
     position: relative;
     animation: mouseAnim 1s linear infinite alternate;
 }
@@ -278,14 +278,14 @@ hr.tall {
         height: 8px;
         border-radius: 4px;
         opacity: 1;
-        top: 50px;
+        top: 30px;
     }
     100% {
         width: 4px;
         height: 4px;
         border-radius: 2px;
         opacity: 0;
-        top: 70px;
+        top: 50px;
     }
 }
 
@@ -755,7 +755,7 @@ hr.tall {
 
 input.txtinput {
     display: block;
-    margin: 30px 0;
+    margin: 20px 0;
     padding: 0 0 0.15em;
     width: 100%;
     border: none;
@@ -771,7 +771,7 @@ input.txtinput {
 
 textarea.txtinput {
     display: block;
-    margin: 30px 0;
+    margin: 20px 0;
     padding: 0 0 0.15em;
     width: 100%;
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -1029,6 +1029,9 @@ input:focus, textarea:focus {
   .formview{
     padding:20px;
   }
+  .contacttit {
+      margin-bottom:10px;
+    }
   input[type='text'],  textarea { /*prevent zoom mobile contacts*/
     font-size: 16px;
   }
@@ -1042,7 +1045,7 @@ input:focus, textarea:focus {
     padding:10px 20px;
   }
   .socialfoot{
-    bottom: 15px;
+    bottom: 65px;
     left: 20%;
   }
   .socialfoot .colfoot{

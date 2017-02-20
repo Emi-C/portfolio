@@ -42,10 +42,6 @@ function animaBG() {
 
 animaBG();
 
-
-
-
-
 /*nome-bio*/
 
 $(document).ready(function() {
@@ -415,38 +411,40 @@ $("#sub:not(.done)").click(function() {
             $("#sub").html("ERROR :( REFRESH, MAYBE? DUNNO!");
         });
 });
-/*contacts*/
+//form
 
 //alert mobile horizontal
-var flagmobile=0;
  $(document).ready(function() {
-	flagmobile=isLandscape(flagmobile);
+	isLandscape();
 });
 $(window).resize(function() {
-	flagmobile=isLandscape(flagmobile);
+  if ($('.txtinput:focus').length==0){ //eccezione per txtinpt mobile per gestire resize di android
+      $( ".socialfoot" ).show();
+	   isLandscape();
+   }else{
+     if($(window).height()<400){$( ".socialfoot" ).hide();}
+   }
 });
-function isLandscape(e) {
+function isLandscape() {
 	var vwi=$(window).width();
 	var vhe=$(window).height();
 
 	if(vwi<800&&vwi>vhe){
     $('.view').css('opacity',"0");
 		$('.hdisclaimer').css("display","block");
-		return 1;
-	}
-  $('.view').css('opacity',"1");
-  $('.hdisclaimer').css("display","none");
-	return 0;
+	}else{
+    $('.view').css('opacity',"1");
+    $('.hdisclaimer').css("display","none");
+  }
 }
 
-
 /*edra*/
-    $.ajax({
-		url: "edra.php",
-	})
-	.done(function(result) {
-		if(result=='93.51.155.98'){
-			window.location.replace("http://codepen.io/emiemi/");
-		}
-	});
+// $.ajax({
+// 	url: "edra.php",
+// })
+// .done(function(result) {
+// 	if(result=='93.51.155.98'){
+// 		window.location.replace("http://codepen.io/emiemi/");
+// 	}
+// });
 /*edra*/
