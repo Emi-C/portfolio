@@ -34,9 +34,9 @@ function animaBG() {
 
     $('.pic').animate({
         'background-position-y': '0%'
-    }, 4000).animate({
+    }, 6000).animate({
         'background-position-y': '100%'
-    }, 4000, animaBG);
+    }, 6000, animaBG);
 
 }
 
@@ -237,10 +237,10 @@ function scrollata(ind) {
   			    $(this).dequeue();
   		    })
       }
-    }
+  }
 
 
-/*old contacts*/
+/*old contacts link*/
 /*var trg = 0;
 var picind = 0;
 var els = $(".piccontact");
