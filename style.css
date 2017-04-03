@@ -29,16 +29,6 @@ a:hover, a:focus {
     color: #F69432;
 }
 
-hr {
-    border: 0;
-    background-image: linear-gradient(to right, transparent, #DBDBDB, transparent);
-    height: 1px;
-}
-
-hr.tall {
-    margin: 40px 0;
-}
-
 .center {
     text-align: center
 }
@@ -76,38 +66,6 @@ hr.tall {
     color: red;
 }
 
-.btn {
-    padding: 10px 30px;
-    color: #fdfdfd;
-    background: #F69432;
-    font-size: 1rem;
-    border-radius: 0;
-    border: 0;
-    transition: all .2s;
-}
-
-.btn:hover, .btn:focus {
-    color: #fdfdfd;
-    text-decoration: none;
-    outline: 0!important;
-}
-
-.btn:hover {
-    background: #ffa54c;
-}
-
-.btn:focus {
-    background: #F69432;
-    box-shadow: inset 0px 0px 10px #984600;
-    -webkit-box-shadow: inset 0px 0px 10px #984600;
-    -moz-box-shadow: inset 0px 0px 10px #984600;
-    -o-box-shadow: inset 0px 0px 10px #984600;
-}
-
-.btn.lg {
-    font-size: 2rem;
-}
-
 .view {
     width: 100vw;
     height: 100vh;
@@ -117,7 +75,6 @@ hr.tall {
 
 
 /*HOME*/
-
 .home {
     position: absolute;
     width: 100%;
@@ -126,7 +83,7 @@ hr.tall {
     z-index: 2;
     opacity: 0;
     transform: translate3d(0px, -100%, 0px);
-    transition: transform 1.7s ease-in-out, opacity 1s;
+    transition:  all 1.3s ease-in-out, opacity 1s;
 }
 
 .home.active {
@@ -138,18 +95,6 @@ hr.tall {
     height: 60%;
     position: relative;
 }
-
-/*.name {
-    font-size: 6rem;
-    color: #fafafa;
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: all 2s;
-    text-shadow: 0px 3px 3px #010101;
-}*/
 
 .logo{
   position: absolute;
@@ -265,6 +210,17 @@ hr.tall {
     animation: ballAnim 1s linear infinite;
 }
 
+@keyframes mouseAnim {
+    0% {
+        border-color: rgba(250, 250, 250, 1);
+    }
+    50% {
+        border-color: rgba(250, 250, 250, .8);
+    }
+    100% {
+        border-color: rgba(250, 250, 250, .5);
+    }
+}
 @keyframes ballAnim {
     0% {
         width: 6px;
@@ -288,20 +244,6 @@ hr.tall {
         top: 50px;
     }
 }
-
-@keyframes mouseAnim {
-    0% {
-        border-color: rgba(250, 250, 250, 1);
-    }
-    50% {
-        border-color: rgba(250, 250, 250, .8);
-    }
-    100% {
-        border-color: rgba(250, 250, 250, .5);
-    }
-}
-
-
 /*HOME*/
 
 
@@ -325,8 +267,7 @@ hr.tall {
 .frame {
     height: 1px;
     width: 100%;
-    background: linear-gradient(90deg, #ccc, #333, #ccc);
-    /* Standard syntax */
+    background: linear-gradient(90deg, #ccc, rgba(205,204,204,0), #ccc);
     position: absolute;
 }
 
@@ -334,7 +275,6 @@ hr.tall {
     width: 1px;
     height: 100%;
     background: linear-gradient(#ccc, #333, #ccc);
-    /* Standard syntax */
     position: absolute;
 }
 
@@ -375,7 +315,7 @@ hr.tall {
     font-size: 3rem;
     height: 5rem;
     color: #fafafa;
-    text-shadow: 0px 3px 3px #010101;
+    /*text-shadow: 0px 3px 3px #010101;*/
     position: absolute;
     text-align: center;
     top: 20px;
@@ -408,7 +348,7 @@ hr.tall {
 .txt {
     font-size: 1.5rem;
     color: #fafafa;
-    text-shadow: 0px 1px 1px #010101;
+    /*text-shadow: 0px 1px 1px #010101;*/
     position: absolute;
     top: 30%;
     bottom: 30%;
@@ -462,7 +402,7 @@ hr.tall {
     background: #fafafa;
     border-radius: 3px;
     margin-right: 20px;
-    box-shadow: 0px 3px 3px #010101;
+    /*box-shadow: 0px 3px 3px #010101;*/
     white-space:nowrap;
 }
 
@@ -488,7 +428,7 @@ hr.tall {
     height: 100%;
     background-size: cover;
 		background-position-x:center;
-    box-shadow: 0px 3px 5px #010101;
+    /*box-shadow: 0px 3px 5px #010101;*/
     transform: translate(1000px, 0px);
     transition: transform 1.7s ease-in-out;
 }
@@ -513,7 +453,7 @@ hr.tall {
     background: #fafafa;
     border: 3px solid #fafafa;
     border-bottom: 5px solid #fafafa;
-    box-shadow: 0px 3px 3px #333;
+    /*box-shadow: 0px 3px 3px #333;*/
     text-decoration: none;
     position: absolute;
     width: 300px;
@@ -521,6 +461,9 @@ hr.tall {
     bottom: 0px;
     transform: translate(0px, 300%);
     transition: transform 1.7s ease-in-out;
+    /*color*/
+    border-color: #82A3A5;
+    color: #82A3A5;
 }
 
 .link a.active {
@@ -537,36 +480,13 @@ hr.tall {
     width: 120%;
     transform: skewX( -15deg);
     transition: all .7s;
-    ;
+    /*color*/
+    background: #82A3A5;
 }
 
 .link a:hover:after, .link a:focus:after {
     right: -10%;
 }
-
-
-/* .link a:hover{ */
-
-
-/* box-shadow: 0px 5px 5px #333; */
-
-
-/* bottom:3px; */
-
-
-/* } */
-
-
-/* .link a:focus{ */
-
-
-/* box-shadow: 0px 3px 3px #333; */
-
-
-/* bottom:0px; */
-
-
-/* } */
 
 .link span {
     position: relative;
@@ -576,14 +496,11 @@ hr.tall {
 .link a:hover span, .link a:focus span {
     color: #fafafa;
 }
-
-
 /*MAIN*/
 
 
 /*blocchi colore*/
-
-#link1 {
+/*#link1 {
     border-color: #E33625;
     color: #E33625;
 }
@@ -608,9 +525,7 @@ hr.tall {
 
 #link3:after {
     background: #E2658F;
-}
-
-
+}*/
 /*blocchi colore*/
 
 
@@ -731,7 +646,7 @@ hr.tall {
     display: inline-block;
     color: #fafafa;
     font-size: 4rem;
-		text-shadow: 0px 3px 3px #010101;
+		/*text-shadow: 0px 3px 3px #010101;*/
 }
 
 .formview {

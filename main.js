@@ -43,7 +43,6 @@ function animaBG() {
 animaBG();
 
 /*nome-bio*/
-
 $(document).ready(function() {
 
     setTimeout(function() {
@@ -64,13 +63,11 @@ $(document).ready(function() {
         $(".scroller").css("opacity", 1);
     }, 3000);
 });
-
 /*nome-bio*/
 
 
 
 /*scroller*/
-
 $(".scroller").click(function() {
     scrollata(0);
 });
@@ -129,9 +126,9 @@ function scrollata(ind) {
                 $(".main").removeClass("active");
             }
 
-      			$('.frame').fadeOut().delay(1000).fadeIn();
-      			$('.framelat').fadeOut().delay(1000).fadeIn();
-      			$('.counter').fadeOut().delay(1000).fadeIn();
+      			$('.frame').fadeOut().delay(700).fadeIn();
+      			$('.framelat').fadeOut().delay(700).fadeIn();
+      			$('.counter').fadeOut().delay(700).fadeIn();
 
 
             $("#tit" + now).removeClass("active");
@@ -170,7 +167,7 @@ function scrollata(ind) {
         				});
         				$(window).on('swipeup',function(){scrollata(0);});
         				$(window).on('swipedown',function(){scrollata(1);});
-              }, 2000);
+              }, 1500);
             }
       } else {
         //console.log("down");
@@ -189,9 +186,9 @@ function scrollata(ind) {
                 $(".main").addClass("active");
             }
 
-      			$('.frame').fadeOut().delay(1000).fadeIn();
-      			$('.framelat').fadeOut().delay(1000).fadeIn();
-      			$('.counter').fadeOut().delay(1000).fadeIn();
+      			$('.frame').fadeOut().delay(700).fadeIn();
+      			$('.framelat').fadeOut().delay(700).fadeIn();
+      			$('.counter').fadeOut().delay(700).fadeIn();
 
             $("#tit" + now).removeClass("active");
             $("#txt" + now).removeClass("active");
@@ -227,7 +224,7 @@ function scrollata(ind) {
         				});
         				$(window).on('swipeup',function(){scrollata(0);});
         				$(window).on('swipedown',function(){scrollata(1);});
-            }, 2000);
+            }, 1500);
           }
       }
 
@@ -240,56 +237,15 @@ function scrollata(ind) {
   }
 
 
-/*old contacts link*/
-/*var trg = 0;
-var picind = 0;
-var els = $(".piccontact");
-var gocont = setInterval(piccont, 1500);
-//manage btn toggle contacts
-function piccont() {
-    els.eq(picind).fadeOut(200, function() {
-        picind = (picind + 1) % els.length;
-        els.eq(picind).fadeIn(200);
-    });
-}
-
-$('.tgcontact').click(function() {
-    if (trg == 0) {
-        //attiva contatti
-        $('.contacts').addClass('active');
-        $('.formview>*').delay(1000).animate({
-            opacity: 1
-        });
-        trg = 1;
-        els.fadeOut(200, function() {
-            $('.tgclose').delay(300).fadeIn(200);
-        });
-        clearInterval(gocont);
-    } else {
-        //leva contatti
-        $('.formview>*').animate({
-            opacity: 0
-        });
-        $('.contacts').delay(500).queue(function(next) {
-            $(this).removeClass("active");
-            next();
-        });
-        trg = 0;
-        picind = 0;
-        $('.tgclose').fadeOut(200, function() {
-            els.eq(0).delay(300).fadeIn(200);
-        });
-        gocont = setInterval(piccont, 1500);
-    }
-})*/
-
-
 /*contacts*/
 $('.tgcontact').click(function(){
   if (!$('.contacts').hasClass('active')) {
       //attiva contatti
       $('.contacts').addClass('active');
-      $('.formview>*').delay(1000).animate({
+      $('.formview>*').delay(700).animate({
+          opacity: 1
+      });
+      $('.socialfoot>*').delay(700).animate({
           opacity: 1
       });
       $('.piccontact').fadeOut(300, function() {
@@ -297,6 +253,9 @@ $('.tgcontact').click(function(){
       });
     }else{
       $('.formview>*').animate({
+          opacity: 0
+      });
+      $('.socialfoot>*').delay(700).animate({
           opacity: 0
       });
       $('.contacts').delay(500).queue(function(next) {
