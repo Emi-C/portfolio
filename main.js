@@ -105,7 +105,7 @@ $(window).on('swipeup',function(){scrollata(0);});
 $(window).on('swipedown',function(){scrollata(1);});
 
 var now = 0;
-var tot = 3;/*change this @ increment portfolio*/
+var tot = 4;/*change this @ increment portfolio*/
 
 $('#tot').html(tot);
 
