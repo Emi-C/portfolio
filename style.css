@@ -387,15 +387,13 @@ a:focus {
   font-size: 0.8rem;
 }
 
-.specs p {
+.specs>div {
   position: absolute;
   opacity: 0;
-  /*transform: translate(-1000px, 0px);
-    transition: transform 1.7s ease-in-out, opacity 2s;*/
   transition: opacity 1s, height 0s 1s;
 }
 
-.specs p.active {
+.specs>div.active {
   height: 100%;
   opacity: 1;
   transition: opacity 1s 1s;
@@ -857,6 +855,11 @@ textarea:focus {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .specs>div{
+    width: 50vw;
+  }
+}
 @media screen and (max-width: 767px) {
   .contactbtn {
     top: 10px;
