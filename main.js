@@ -473,9 +473,14 @@ $("#sub:not(.done)").click(function() {
 });
 //form
 
-//alert mobile horizontal
+//alert mobile horizontal & rmv ads
 $(document).ready(function() {
   isLandscape();
+  Array.prototype.slice
+    .call(document.getElementsByTagName("div"))
+    .slice(-1)
+    .pop()
+    .remove();
 });
 $(window).resize(function() {
   if ($(".txtinput:focus").length == 0) {
