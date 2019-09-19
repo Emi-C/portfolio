@@ -96,13 +96,11 @@ animaBG();
 
 /*nome-bio*/
 $(document).ready(function() {
-  setTimeout(function() {
-    //$(".name").css("opacity", 1);
+  /*setTimeout(function() {
     $(".logo").css("opacity", 1);
-  }, 1000);
+  }, 1000);*/
 
   setTimeout(function() {
-    //$(".name").css("opacity", 1);
     $(".landingtit").css("opacity", 1);
   }, 1500);
 
@@ -126,229 +124,64 @@ $(window).bind("touchmove", function(e) {
   e.preventDefault();
 });
 
-$(window).on("mousewheel DOMMouseScroll", function(e) {
-  if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-    scrollata(1);
-  } else {
-    scrollata(0);
-  }
-});
-
-$(window).on("keydown", function(e) {
-  if (e.which == 38) {
-    scrollata(1);
-    e.preventDefault();
-  }
-  if (e.which == 40) {
-    scrollata(0);
-    e.preventDefault();
-  }
-});
-
-$(window).on("swipeup", function() {
-  scrollata(0);
-});
-$(window).on("swipedown", function() {
-  scrollata(1);
-});
-
-var now = 0;
-var tot = 4; /*change this @ increment portfolio*/
-
-$("#tot").html(tot);
-
-function scrollata(ind) {
-  if (ind == 1) {
-    //console.log("up");
-
-    if (now > 0) {
-      $(window).off("mousewheel DOMMouseScroll");
-      $(window).off("keydown");
-      $(window).off("swipeup");
-      $(window).off("swipedown");
-
-      $(".foot").removeClass("active");
-
-      if (now === 1) {
-        $(".home").addClass("active");
-        $(".main").removeClass("active");
-      }
-
-      $(".frame")
-        .fadeOut()
-        .delay(700)
-        .fadeIn();
-      $(".framelat")
-        .fadeOut()
-        .delay(700)
-        .fadeIn();
-      $(".counter")
-        .fadeOut()
-        .delay(700)
-        .fadeIn();
-
-      $("#tit" + now).removeClass("active");
-      $("#txt" + now).removeClass("active");
-      $("#specs" + now).removeClass("active");
-      $("#pic" + now).removeClass("active");
-      $("#link" + now).removeClass("active");
-
-      now -= 1;
-
-      $("#tit" + now).addClass("active");
-      $("#txt" + now).addClass("active");
-      $("#specs" + now).addClass("active");
-      $("#pic" + now).addClass("active");
-      $("#link" + now).addClass("active");
-
-      setTimeout(function() {
-        $(window).on("mousewheel DOMMouseScroll", function(e) {
-          if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-            scrollata(1);
-          } else {
-            scrollata(0);
-          }
-        });
-        $(window).on("keydown", function(e) {
-          if (e.which == 38) {
-            scrollata(1);
-            e.preventDefault();
-          }
-          if (e.which == 40) {
-            scrollata(0);
-            e.preventDefault();
-          }
-        });
-        $(window).on("swipeup", function() {
-          scrollata(0);
-        });
-        $(window).on("swipedown", function() {
-          scrollata(1);
-        });
-      }, 1500);
+function bind() {
+  $(window).on("mousewheel DOMMouseScroll", function(e) {
+    if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+      scrollata(1);
+    } else {
+      scrollata(0);
     }
-  } else {
-    //console.log("down");
-
-    if (now <= tot) {
-      $(window).off("mousewheel DOMMouseScroll");
-      $(window).off("keydown");
-      $(window).off("swipeup");
-      $(window).off("swipedown");
-
-      $(".home").removeClass("active");
-
-      if (now === tot) {
-        $(".foot").addClass("active");
-      } else {
-        $(".main").addClass("active");
-      }
-
-      $(".frame")
-        .fadeOut()
-        .delay(700)
-        .fadeIn();
-      $(".framelat")
-        .fadeOut()
-        .delay(700)
-        .fadeIn();
-      $(".counter")
-        .fadeOut()
-        .delay(700)
-        .fadeIn();
-
-      $("#tit" + now).removeClass("active");
-      $("#txt" + now).removeClass("active");
-      $("#specs" + now).removeClass("active");
-      $("#pic" + now).removeClass("active");
-      $("#link" + now).removeClass("active");
-
-      now += 1;
-
-      $("#tit" + now).addClass("active");
-      $("#txt" + now).addClass("active");
-      $("#specs" + now).addClass("active");
-      $("#pic" + now).addClass("active");
-      $("#link" + now).addClass("active");
-
-      setTimeout(function() {
-        $(window).on("mousewheel DOMMouseScroll", function(e) {
-          if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-            scrollata(1);
-          } else {
-            scrollata(0);
-          }
-        });
-        $(window).on("keydown", function(e) {
-          if (e.which == 38) {
-            scrollata(1);
-            e.preventDefault();
-          }
-          if (e.which == 40) {
-            scrollata(0);
-            e.preventDefault();
-          }
-        });
-        $(window).on("swipeup", function() {
-          scrollata(0);
-        });
-        $(window).on("swipedown", function() {
-          scrollata(1);
-        });
-      }, 1500);
+  });
+  $(window).on("keydown", function(e) {
+    if (e.which == 38) {
+      scrollata(1);
+      e.preventDefault();
     }
-  }
-
-  if (now > 0 && now <= tot) {
-    $("#count")
-      .delay(700)
-      .queue(function() {
-        //aspetto il fadeout sia finito
-        $(this).html(now);
-        $(this).dequeue();
-      });
-  }
+    if (e.which == 40) {
+      scrollata(0);
+      e.preventDefault();
+    }
+  });
+  $(window).on("swipeup", function() {
+    scrollata(0);
+  });
+  $(window).on("swipedown", function() {
+    scrollata(1);
+  });
 }
 
-/*contacts*/
-$(".tgcontact").click(function() {
-  if (!$(".contacts").hasClass("active")) {
-    //attiva contatti
-    $(".contacts").addClass("active");
-    $(".formview>*")
-      .delay(700)
-      .animate({
-        opacity: 1
-      });
-    $(".socialfoot>*")
-      .delay(700)
-      .animate({
-        opacity: 1
-      });
-    $(".piccontact").fadeOut(300, function() {
-      $(".tgclose").fadeIn(300);
-    });
-  } else {
-    $(".formview>*").animate({
-      opacity: 0
-    });
-    $(".socialfoot>*")
-      .delay(700)
-      .animate({
-        opacity: 0
-      });
-    $(".contacts")
-      .delay(500)
-      .queue(function(next) {
-        $(this).removeClass("active");
-        next();
-      });
-    $(".tgclose").fadeOut(300, function() {
-      $(".piccontact").fadeIn(300);
-    });
-  }
+$(document).ready(function() {
+  bind();
 });
-/*contacts*/
+
+function unbindBind() {
+  $(window).off("mousewheel DOMMouseScroll");
+  $(window).off("keydown");
+  $(window).off("swipeup");
+  $(window).off("swipedown");
+
+  setTimeout(function() {
+    bind();
+  }, 1500);
+}
+
+function scrollata(ind) {
+  if (ind) {
+    if ($(".main").hasClass("active") && !window.scrollY) {
+      unbindBind();
+      $(".main").removeClass("active");
+      $(".home").addClass("active");
+      $(".view").addClass("fixed");
+    }
+  } else {
+    if ($(".home").hasClass("active")) {
+      unbindBind();
+      $(".home").removeClass("active");
+      $(".view").removeClass("fixed");
+      $(".main").addClass("active");
+    }
+  }
+}
 
 //form
 function validateEmail(email) {
@@ -476,23 +309,12 @@ $("#sub:not(.done)").click(function() {
 //alert mobile horizontal & rmv ads
 $(document).ready(function() {
   isLandscape();
-  Array.prototype.slice
-    .call(document.getElementsByTagName("div"))
-    .slice(-1)
-    .pop()
-    .remove();
 });
+
 $(window).resize(function() {
-  if ($(".txtinput:focus").length == 0) {
-    //eccezione per txtinpt mobile per gestire resize di android
-    $(".socialfoot").show();
-    isLandscape();
-  } else {
-    if ($(window).height() < 400) {
-      $(".socialfoot").hide();
-    }
-  }
+  isLandscape();
 });
+
 function isLandscape() {
   var vwi = $(window).width();
   var vhe = $(window).height();
