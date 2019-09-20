@@ -307,23 +307,23 @@ $("#sub:not(.done)").click(function() {
 //form
 
 //alert mobile horizontal & rmv ads
-$(document).ready(function() {
-  isLandscape();
-});
+// $(document).ready(function() {
+//   isLandscape();
+// });
 
-$(window).resize(function() {
-  isLandscape();
-});
+// $(window).resize(function() {
+//   isLandscape();
+// });
 
-function isLandscape() {
-  var vwi = $(window).width();
-  var vhe = $(window).height();
+// function isLandscape() {
+//   var vwi = $(window).width();
+//   var vhe = $(window).height();
 
-  if (vwi < 800 && vwi > vhe) {
-    $(".view").css("opacity", "0");
-    $(".hdisclaimer").css("display", "block");
-  } else {
-    $(".view").css("opacity", "1");
-    $(".hdisclaimer").css("display", "none");
-  }
-}
+//   if (vwi < 800 && vwi > vhe) {
+//     $(".view").css("opacity", "0");
+//     $(".hdisclaimer").css("display", "block");
+//   } else {
+//     $(".view").css("opacity", "1");
+//     $(".hdisclaimer").css("display", "none");
+//   }
+// }
