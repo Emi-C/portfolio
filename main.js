@@ -116,72 +116,8 @@ $(document).ready(function() {
 
 /*scroller*/
 $(".scroller").click(function() {
-  scrollata(0);
+  $("html, body").animate({ scrollTop: window.innerHeight }, 700);
 });
-
-/*scroll*/
-$(window).bind("touchmove", function(e) {
-  e.preventDefault();
-});
-
-function bind() {
-  $(window).on("mousewheel DOMMouseScroll", function(e) {
-    if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-      scrollata(1);
-    } else {
-      scrollata(0);
-    }
-  });
-  $(window).on("keydown", function(e) {
-    if (e.which == 38) {
-      scrollata(1);
-      e.preventDefault();
-    }
-    if (e.which == 40) {
-      scrollata(0);
-      e.preventDefault();
-    }
-  });
-  $(window).on("swipeup", function() {
-    scrollata(0);
-  });
-  $(window).on("swipedown", function() {
-    scrollata(1);
-  });
-}
-
-$(document).ready(function() {
-  bind();
-});
-
-function unbindBind() {
-  $(window).off("mousewheel DOMMouseScroll");
-  $(window).off("keydown");
-  $(window).off("swipeup");
-  $(window).off("swipedown");
-
-  setTimeout(function() {
-    bind();
-  }, 1500);
-}
-
-function scrollata(ind) {
-  if (ind) {
-    if ($(".main").hasClass("active") && !window.scrollY) {
-      unbindBind();
-      $(".main").removeClass("active");
-      $(".home").addClass("active");
-      $(".view").addClass("fixed");
-    }
-  } else {
-    if ($(".home").hasClass("active")) {
-      unbindBind();
-      $(".home").removeClass("active");
-      $(".view").removeClass("fixed");
-      $(".main").addClass("active");
-    }
-  }
-}
 
 //form
 function validateEmail(email) {
